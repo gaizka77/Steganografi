@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steganografi Audio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <h1>🔒 Steganografi Audio</h1>
+            <p>Metode Least Significant Bit (LSB)</p>
+            <span>Media: Audio WAV</span>
+        </div>
+
+        <div class="card">
+
+            <div class="section">
+                <label for="audioFile">File Audio WAV</label>
+
+                <input
+                    type="file"
+                    id="audioFile"
+                    accept=".wav,audio/wav"
+                >
+
+                <div id="fileInfo" class="file-info">
+                    Belum ada file yang dipilih
+                </div>
+            </div>
+
+            <div class="section">
+                <label for="message">Pesan Rahasia</label>
+
+                <textarea
+                    id="message"
+                    placeholder="Masukkan pesan rahasia..."
+                    maxlength="1000"
+                ></textarea>
+
+                <div class="counter">
+                    <span id="charCount">0</span>/1000 karakter
+                </div>
+            </div>
+
+            <div class="buttons">
+                <button id="encodeBtn" class="btn primary">
+                    🔐 Sisipkan Pesan
+                </button>
+
+                <button id="decodeBtn" class="btn secondary">
+                    🔓 Ambil Pesan
+                </button>
+
+                <button id="resetBtn" class="btn danger">
+                    🔄 Reset
+                </button>
+            </div>
+
+            <div class="progress-container">
+                <div class="progress-header">
+                    <span>Progress</span>
+                    <span id="progressText">0%</span>
+                </div>
+
+                <div class="progress-bar">
+                    <div id="progress" class="progress"></div>
+                </div>
+            </div>
+
+            <div id="status" class="status">
+                Status: Menunggu
+            </div>
+
+            <div class="result">
+                <label for="resultMessage">Pesan Hasil Decode</label>
+
+                <textarea
+                    id="resultMessage"
+                    readonly
+                    placeholder="Pesan hasil decode akan muncul di sini..."
+                ></textarea>
+
+                <button id="downloadBtn" class="btn download" disabled>
+                    ⬇️ Download Audio Steganografi
+                </button>
+            </div>
+
+        </div>
+
+        <div class="footer">
+            <p>Steganografi Audio menggunakan metode LSB</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
